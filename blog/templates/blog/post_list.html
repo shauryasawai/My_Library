@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Blog Posts{% endblock %}
+
+{% block content %}
+  <h1>All Blog Posts</h1>
+  <ul>
+    {% for post in posts %}
+        <li>
+            <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+            
+        </li>
+    {% endfor %}
+</ul>
+    <div>
+      {% if post.heading %}
+                    <h3>{{ post.heading }}</h3>
+                {% endif %}
+      <p>{{ post.content }}</p>
+      {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" style="width:100px;">
+                {% endif %}
+      <p>Author: {{ post.author }}</p>
+      <p>Created At: {{ post.created_at }}</p>
+      
+    </div>
+{% endblock %}
