@@ -1,68 +1,120 @@
 {% extends 'base/base.html' %}
-
 {% block content %}
-<div class="container mt-5 mb-5">
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <div class="card-header">
-                    Heading WRT any information
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">GAP Filler</h5>
-                    <p class="card-text">This is just a place holder to understand how things are working or going to work in near future
-                    </p>
-                </div>
-                <div class="card-footer center">
-                    Click to view
-                </div>
-            </div>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+    header {
+        background: #333;
+        color: #fff;
+        padding-top: 30px;
+        min-height: 70px;
+        border-bottom: #77aaff 3px solid;
+    }
+    header a {
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    header ul {
+        padding: 0;
+        list-style: none;
+    }
+    header li {
+        float: left;
+        display: inline;
+        padding: 0 20px 0 20px;
+    }
+    header #branding {
+        float: left;
+    }
+    header #branding h1 {
+        margin: 0;
+    }
+    header nav {
+        float: right;
+        margin-top: 10px;
+    }
+    .book-catalogue {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+    }
+    .book {
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .book img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .book h3 {
+        margin: 0;
+        padding-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Harry Potter Books</h2>
+    <div class="book-catalogue">
+        <div class="book">
+            <img src="https://www.jkrowling.com/wp-content/uploads/2016/11/HPTSS-1.png" alt="Harry Potter and the Sorcerer's Stone">
+            <h3>Harry Potter and the Sorcerer's Stone</h3>
+            <p>Harry discovers he's a wizard on his 11th birthday when Hagrid escorts him to magic-teaching Hogwarts School. As a baby, his mother's love protected him and vanquished the dark lord, leaving Harry with a lightning-bolt scar.</p>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <div class="card-header">
-                    Heading WRT any information
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">GAP Filler</h5>
-                    <p class="card-text">This is just a place holder to understand how things are working or going to work in near future
-                    </p>
-                </div>
-                <div class="card-footer center">
-                    Click to view
-                </div>
-            </div>
+        <div class="book">
+            <img src="https://static.wikia.nocookie.net/harrypotter/images/b/b2/French_T2_%282016_new_edition%29.jpg/revision/latest/scale-to-width-down/250?cb=20201227171321" alt="Harry Potter and the Chamber of Secrets">
+            <h3>Harry Potter and the Chamber of Secrets</h3>
+            <p>Harry returns to Hogwarts for his second year, which proves to be more challenging than the first. The Chamber of Secrets has been opened, leaving students petrified by an unleashed monster.</p>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <div class="card-header">
-                    Heading WRT any information
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">GAP Filler</h5>
-                    <p class="card-text">This is just a place holder to understand how things are working or going to work in near future
-                    </p>
-                </div>
-                <div class="card-footer center">
-                    Click to view
-                </div>
-            </div>
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/51foVEpVklL._SL500_.jpg" alt="Harry Potter and the Prisoner of Azkaban">
+            <h3>Harry Potter and the Prisoner of Azkaban</h3>
+            <p>In his third year at Hogwarts, Harry learns that the notorious prisoner Sirius Black has escaped from Azkaban prison and is coming for him. The truth about Sirius, and Harry's own past, is revealed.</p>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <div class="card-header">
-                    Heading WRT any information
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">GAP Filler</h5>
-                    <p class="card-text">This is just a place holder to understand how things are working or going to work in near future
-                    </p>
-                </div>
-                <div class="card-footer center">
-                    Click to view
-                </div>
-            </div>
+        <div class="book">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTBxrfBrShmgZTP_Fn6819CsFnrH1bKL-w3qqw0heNd0wqBatuXphoiFWsLSAfEj-MXbU9ziUMOiEd2DKWNMuBJMtCrVho0AkYJ3rzRgB0&usqp=CAc" alt="Harry Potter and the Goblet of Fire">
+            <h3>Harry Potter and the Goblet of Fire</h3>
+            <p>During Harry's fourth year at Hogwarts, he is unwillingly entered into the Triwizard Tournament. Facing daunting tasks and dark forces, Harry must navigate the most dangerous year yet.</p>
+        </div>
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/51iQwWIl+XL.jpg" alt="Harry Potter and the Order of the Phoenix">
+            <h3>Harry Potter and the Order of the Phoenix</h3>
+            <p>Harry's fifth year brings new challenges, including the rise of the dark forces led by Voldemort and the new authoritarian regime at Hogwarts. Harry forms 'Dumbledore's Army' to fight back.</p>
+        </div>
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/81DN1723hUL._AC_UF1000,1000_QL80_.jpg" alt="Harry Potter and the Half-Blood Prince">
+            <h3>Harry Potter and the Half-Blood Prince</h3>
+            <p>In his sixth year, Harry discovers a mysterious potions book belonging to the 'Half-Blood Prince.' As he delves deeper into Voldemort's past, Harry prepares for the ultimate battle.</p>
+        </div>
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/81aCMT1zKtL._AC_UF1000,1000_QL80_.jpg" alt="Harry Potter and the Deathly Hallows">
+            <h3>Harry Potter and the Deathly Hallows Part-1</h3>
+            <p>In the final book, Harry, Ron, and Hermione leave Hogwarts to find and destroy Voldemort's Horcruxes. The wizarding world is at war, and Harry's journey ends with a showdown against Voldemort.</p>
+        </div>
+        <div class="book">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHZuUlQU9cUuKiDmecaWuQoBx6ssQGS9LrA&s" alt="Harry Potter and the Deathly Hallows">
+            <h3>Harry Potter and the Deathly Hallows Part-2</h3>
+            <p>In the thrilling conclusion to J.K. Rowling's beloved Harry Potter series. The story picks up immediately after the events of Part 1, following Harry, Ron, and Hermione as they continue their quest to destroy the remaining Horcruxes and defeat Lord Voldemort. </p>
         </div>
     </div>
 </div>
+
 {% endblock %} 

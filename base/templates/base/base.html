@@ -40,20 +40,22 @@
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
               <!-- Dashboard -->
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#"><i class="bi bi-chevron-up"></i> Dashboard</a>
+                <a class="nav-link" aria-current="page" href="/blog/post_list"><i class="bi bi-chevron-up"></i> View Blog</a>
               </li>
               <!-- Fee -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="submenu2" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-calendar-check-fill"></i> Blogs</a>
-                <div class="dropdown-menu" aria-labelledby="submenu2">
-                  <a class="dropdown-item" href="/blog/post_list">View Blog</a>
-                  <a class="dropdown-item" href="/blog/post_create">Create Blog</a>
-                </div>
+              <li class="nav-item">
+                <a class="nav-link" href="/get_book_reviews" id="page" ><i class="bi bi-calendar-check-fill"></i> Book Reviews</a>
               </li>
               <!-- Admission -->
               <li class="nav-item">
-                <a class="nav-link" href="/reg/nreg"><i class="bi bi-calendar-check-fill"></i> Admission</a>
+                <a class="nav-link" href="/reg/nreg"><i class="bi bi-calendar-check-fill"></i> Catalogues</a>
               </li>
+
+              <!--FeedBack Form-->
+              <li class="nav-item">
+                <a class="nav-link" href="/feedback"><i class="bi bi-calendar-check-fill"></i> FeedBack Form</a>
+              </li>
+
               <!-- Student's Detail -->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="submenu" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-person"></i> Student's Detail</a>
@@ -63,27 +65,15 @@
                 </div>
               </li>
               <!-- Others -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="submenu1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-list"></i> Others</a>
-                <div class="dropdown-menu" aria-labelledby="submenu1">
-                  <a class="dropdown-item" href="/enquiry">Enquiry List</a>
-                  <a class="dropdown-item" href="/visitor">Visitor Form</a>
-                  <a class="dropdown-item" href="/galla">Galla Status</a>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-calendar-check-fill"></i> About Us</a>
                 </div>
               </li>
             </ul>
             <!-- User dropdown -->
-            <div class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="nav-item">
+              <a class="nav-link" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <img src="{% static 'img/user.png' %}" alt="user" width="30" height="30" class="d-inline-block align-text-middle   mx-2  "> {{ user.get_username }}
-              </a>
-              <div class="dropdown-menu" aria-labelledby="userDropdown">
-                <!-- Set Profile -->
-                <a class="dropdown-item" href="#">Edit Profile <i class="bi bi-box-arrow-right"></i></a>
-                <!-- Set Library Rate -->
-                <a class="dropdown-item" href="#">Set Fee Schedule <i class="bi bi-box-arrow-right"></i></a> <i class="bi bi-box-arrow-right"></i></a>
-                <hr>
-                <a class="dropdown-item" href="#">Logout <i class="bi bi-box-arrow-right mt-1"></i></a>
             </div>
           </div>
         </div>

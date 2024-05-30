@@ -73,6 +73,13 @@ class CustomPasswordResetForm(PasswordResetForm):
 class PasswordResetForm(forms.Form):
     email = forms.EmailField()
 
+from .models import Feedback
+
+class FeedbackForm(forms.ModelForm):
+    class Meta:
+        model = Feedback
+        fields = ['name', 'email', 'message']
+
 
 
 

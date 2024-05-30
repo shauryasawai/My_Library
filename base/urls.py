@@ -9,6 +9,7 @@ from .views import reset_password
 from django.urls import path
 from .views import custom_login
 from .views import CustomPasswordResetCompleteView
+from .views import get_book_reviews
 
 
 
@@ -23,5 +24,9 @@ urlpatterns=[
   path('reset-password/',reset_password, name='reset-password'),
   path('reset/done/', CustomPasswordResetCompleteView.as_view(), name='password_reset_complete'),
   path('home/blog_view/', views.blog, name='reader_view'),
+  path('feedback/', views.feedback_view, name='feedback'),
+  path('feedback_thanks/', views.feedback_thanks, name='feedback_thanks'),
+  path('get_book_reviews/', get_book_reviews, name='get_book_reviews'),
+
 ]
  

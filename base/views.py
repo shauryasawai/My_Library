@@ -49,6 +49,28 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.shortcuts import render
 from .forms import SignUpForm
+from .forms import FeedbackForm
+from django.http import JsonResponse
+from .models import BookReview
+
+
+def get_book_reviews(request):
+    reviews = BookReview.objects.all()
+    return render(request, 'base/book_reviews.html', {'reviews': reviews})
+
+
+def feedback_view(request):
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('feedback_thanks')
+    else:
+        form = FeedbackForm()
+    return render(request, 'base/feedback_form.html', {'form': form})
+
+def feedback_thanks(request):
+    return render(request, 'base/feedback_thanks.html')
 
 def home(request):
    return render(request, 'base/home.html')
@@ -56,17 +78,6 @@ def home(request):
 def blog(request):
     return render(request, 'blog/blog.html')
 
-def enquiry(request):
-    return render(request, 'enquiry.html')
-
-def buy_books(request):
-    return render(request, 'buy_books.html')
-
-def feedback(request):
-    return render(request, 'feedback.html')
-
-def help_centre(request):
-    return render(request, 'help_centre.html')
 
 def signup(request):
     if request.method == 'POST':
