@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Blog</title>
+</head>
+<style>
+  
+  h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+  }
+  
+  /* Style for paragraphs */
+  p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+  }
+  
+  /* Style for anchor links */
+  a {
+      color: #007bff; /* Blue color for links */
+      text-decoration: none;
+      margin-right: 10px;
+  }
+  
+  a:hover {
+      text-decoration: underline; /* Underline links on hover */
+  }
+  
+  /* Style for buttons */
+  button {
+      background-color: #007bff; /* Blue color for buttons */
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+  
+  button:hover {
+      background-color: #0056b3; /* Darker shade of blue on hover */
+  }
+  
+  /* Style for forms */
+  form {
+      margin-bottom: 20px;
+  }
+  
+  /* Style for image */
+  img {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+  </style>
+<body>
+    <h1>New Blog</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'blog_list' %}">Back to Blog List</a>
+</body>
+</html>

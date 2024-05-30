@@ -1,9 +1,11 @@
 # In your blog/forms.py file
 
 from django import forms
-from .models import Post
+from .models import Blog
 
-class PostForm(forms.ModelForm):
+class BlogForm(forms.ModelForm):
     class Meta:
-        model = Post
-        fields = ('title','heading','content','image')
+        model = Blog
+        fields = ['title', 'heading', 'content', 'image', 'publisher']
+
+

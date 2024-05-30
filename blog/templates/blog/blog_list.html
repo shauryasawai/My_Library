@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog List</title>
+</head>
+<style>
+  
+  h1 {
+    font-size: 70px;
+    text-align: center;
+    
+}
+h2{
+  padding-left: 80px;
+  padding-top: 30px;
+  font-size: 60px;
+
+
+}
+
+/* Style for paragraphs */
+p {
+    line-height: 5.6;
+    margin-bottom: 15px;
+}
+
+/* Style for anchor links */
+a {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* Style for buttons */
+button {
+    background-color: #007bff; /* Blue color for buttons */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+/* Style for forms */
+form {
+    margin-bottom: 20px;
+}
+
+a{
+  font-size: 35px;
+  font-weight: bold;
+  padding-left: 80px;
+}
+a1{
+  font-size: 50px;
+}
+
+/* Style for image */
+img {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+</style>
+  </style>
+<body>
+    <h1>Blogs List</h1>
+    <a href="{% url 'blog_create' %}">Create a New Blog</a>
+  
+    <h2>Available Blogs</h2>
+      {% for blog in blogs %}  
+        <br>
+                <a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a>
+                    {% csrf_token %}
+                </form>
+            
+        {% endfor %}
+    
+</body>
+</html>
