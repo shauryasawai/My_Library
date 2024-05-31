@@ -52,6 +52,12 @@ from .forms import SignUpForm
 from .forms import FeedbackForm
 from django.http import JsonResponse
 from .models import BookReview
+from django.shortcuts import render
+from .models import Category
+
+def bookscategory(request):
+    categories = Category.objects.all()
+    return render(request, 'base/category.html', {'categories': categories})
 
 
 def get_book_reviews(request):
@@ -218,53 +224,6 @@ def custom_login(request):
         return redirect('home')
     else:
         return render(request, 'base/custom_login.html')
-
-from .forms import AdminRegistrationForm, ManagerRegistrationForm, AgentRegistrationForm, GuestRegistrationForm
-
-def register_admin(request):
-    if request.method == 'POST':
-        form = AdminRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')
-    else:
-        form = AdminRegistrationForm()
-    return render(request, 'register.html', {'form': form})
-
-
-def register_manager(request):
-    if request.method == 'POST':
-        form = ManagerRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')  # Redirect to login page after successful registration
-    else:
-        form = ManagerRegistrationForm()
-    return render(request, 'register.html', {'form': form})
-
-
-def register_agent(request):
-    if request.method == 'POST':
-        form = AgentRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')
-    else:
-        form = AgentRegistrationForm()
-    return render(request, 'register.html', {'form': form})
-
-
-def register_guest(request):
-    if request.method == 'POST':
-        form = GuestRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')
-    else:
-        form = GuestRegistrationForm()
-    return render(request, 'register.html', {'form': form})
-
-
 
 
 

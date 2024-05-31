@@ -129,7 +129,7 @@ DATE_FORMAT = "d/m/y"
 STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR,'books', 'static'),
 ]
 
 # Default primary key field type

@@ -10,29 +10,8 @@ from django import forms
 from django import forms
 from django import forms
 from django.contrib.auth.forms import PasswordResetForm
-from .models import CustomUser
 from django import forms
 
-class AdminRegistrationForm(UserCreationForm):
-    class Meta:
-        model = CustomUser
-        fields = ('username', 'user_type',)
-
-class ManagerRegistrationForm(UserCreationForm):
-    class Meta:
-        model = CustomUser
-        fields = ('username', 'user_type',)
-
-class AgentRegistrationForm(UserCreationForm):
-    class Meta:
-        model = CustomUser
-        fields = ('username', 'user_type',)
-
-class GuestRegistrationForm(UserCreationForm):
-    class Meta:
-        model = CustomUser
-        fields = ('username', 'user_type',)
-        
 
 class SignUpForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):

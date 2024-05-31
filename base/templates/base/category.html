@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Template</title>
+    <style>body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+  }
+  
+  .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+  }
+
+  .back-to-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+  
+  .box {
+      width: 150px;
+      height: 150px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.2s;
+  }
+  
+  .box:hover {
+      transform: scale(1.05);
+  }
+  
+  .box a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+  }
+  
+  .box img {
+      max-width: 100%;
+      max-height: 70%;
+      object-fit: cover;
+      border-bottom: 1px solid #ccc;
+  }
+  
+  .box p {
+      margin: 10px 0 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+  }
+  </style>
+</head>
+<body>
+  
+    <div class="container">
+        <div class="box">
+            <a href="mystery.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp_mapTTbHLcaaaElBxJMchzSNAGOiA1kZzA&s" alt="Mystery">
+                <p>Mystery</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="adventure.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVGswJHt7h-hVUDSaFBG8akJIxSA0Kqz-1yw&s" alt="Adventure">
+                <p>Adventure</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="superhero.html">
+                <img src="https://assetsio.gnwcdn.com/2x1_NSwitchDS_BatmanArkhamTrilogy.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp" alt="SuperHero">
+                <p>SuperHero</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="drama.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEu87wGEaSFRe9XHKQeR4fBEpp0v3fHJ6WlA&s" alt="Drama">
+                <p>Drama</p>
+            </a>
+        </div>
+    </div>
+    <div class="back-to-home">
+      <a href="/home">Back to Home</a>
+</body>
+</html>
