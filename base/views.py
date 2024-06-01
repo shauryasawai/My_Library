@@ -14,7 +14,6 @@ from django.contrib.auth.views import LoginView
 from django.http import HttpResponse
 from django.http import HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
-from .models import UserProfile
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
