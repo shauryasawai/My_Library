@@ -52,18 +52,21 @@ from .forms import FeedbackForm
 from django.http import JsonResponse
 from .models import BookReview
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
 from .models import Category
 
+@login_required
 def bookscategory(request):
     categories = Category.objects.all()
     return render(request, 'base/category.html', {'categories': categories})
 
-
+@login_required
 def get_book_reviews(request):
     reviews = BookReview.objects.all()
     return render(request, 'base/book_reviews.html', {'reviews': reviews})
 
-
+@login_required
 def feedback_view(request):
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
@@ -74,12 +77,15 @@ def feedback_view(request):
         form = FeedbackForm()
     return render(request, 'base/feedback_form.html', {'form': form})
 
+@login_required
 def feedback_thanks(request):
     return render(request, 'base/feedback_thanks.html')
 
+@login_required
 def home(request):
    return render(request, 'base/home.html')
 
+@login_required
 def blog(request):
     return render(request, 'blog/blog.html')
 
