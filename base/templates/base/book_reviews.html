@@ -1,96 +1,111 @@
-
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harry Potter Book Reviews</title>
     <style>
       body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f9f9f9;
-    }
-    .container {
+        background-color: #000000;
+      }
+      .container {
         width: 90%;
         margin: 0 auto;
         padding: 20px;
-    }
-    .header {
+      }
+      .header {
         background-color: #333;
         color: #fff;
-        padding: 20px 0;
+        padding: 10px 0;
         text-align: center;
         margin-bottom: 20px;
-    }
-    .header h1 {
+      }
+      .header h1 {
         margin: 0;
         font-size: 2.5em;
-    }
-    .catalogue {
+      }
+      .catalogue {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         grid-gap: 20px;
-    }
-    .book {
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
+      }
+      .book {
+        background-color: #333;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        padding: 30px 0;
+        margin-top: 30px;
+        padding-bottom: 0;
         transition: transform 0.3s ease;
-    }
-    .book:hover {
-        transform: translateY(-5px);
-    }
-    .book img {
-        max-width: 100%;
-        height: auto;
+      }
+      .book img {
+        width: 200px;
+        height: 300px;
+        background-color: #000000;
+        object-fit: contain;
         margin-bottom: 10px;
         border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-    .book h2 {
+        box-shadow: 0 0 5px rgba(42, 42, 42, 0.1);
+        margin-left: 30px;
+      }
+      .book h2 {
         font-size: 1.5em;
         margin-top: 0;
         margin-bottom: 10px;
-        color: #333;
-    }
-    .book p {
-        color: #555;
-        line-height: 1.6;
-    }
-    .book .author {
+        color: #ffffff;
+        margin-left: 30px;
+      }
+      .book p {
+        color: #bcbcbc;
+        margin: 4px 0;
+        margin-left: 30px;
+      }
+      .book .author {
         font-weight: bold;
-        color: #333;
-    }
-    .book .rating {
+        color: #bcbcbc;
+      }
+      .book .rating {
         margin-top: 10px;
         color: #f39c12;
-    }
-    .star {
+      }
+      .star {
         color: #f39c12;
         font-size: 1.2em;
-    }
-</style>   
-</head>
-<body>
+        margin-left: 30px;
+      }
+      .book-container {
+        display: flex;
+        flex-direction: row;
+      }
+      .text-container {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
     <div class="header">
-        <h1>Book Reviews</h1>
+      <h1>Book Reviews</h1>
     </div>
     <div class="container">
-        <div class="review-section">
-            {% for review in reviews %}
-                <div class="book">
-                    <img src="{{ review.image_url }}" alt="{{ review.title }}">
-                    <h2>{{ review.title }}</h2>
-                    <p class="author">By: {{ review.author }}</p>
-                    <p class="review">{{ review.review }}</p>
-                    <div class="rating">
-                            <span class="star">⭐</span>
-                        {% endfor %}
-                    </div>
-                </div>
+      <div class="review-section">
+        {% for review in reviews %}
+        <div class="book">
+          <div class="book-container">
+            <img src="{{ review.image_url }}" alt="{{ review.title }}" />
+            <div class="text-container">
+              <h2>{{ review.title }}</h2>
+              <p class="author">By: {{ review.author }}</p>
+              <p class="review">{{ review.review }}</p>
+              <div class="rating">
+                <span class="star">⭐</span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
-
