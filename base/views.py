@@ -54,6 +54,12 @@ from django.http import JsonResponse
 from .models import BookReview
 from django.shortcuts import render
 from .models import Category
+from .models import Book
+
+
+def book_list(request):
+    books = Book.objects.all()
+    return render(request, 'base/mysterytbook_list.html', {'books': books})
 
 def bookscategory(request):
     categories = Category.objects.all()
