@@ -26,7 +26,7 @@ from django.contrib.auth.views import PasswordResetView
 from django.shortcuts import render
 from .forms import PasswordResetForm
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_str
@@ -35,6 +35,7 @@ from django.utils.http import urlsafe_base64_decode
 from django.shortcuts import redirect
 from django.core.mail import EmailMessage
 from django.contrib.auth.views import PasswordResetConfirmView
+from django.contrib.auth.views import LogoutView
 from .forms import CustomPasswordResetForm
 from django.contrib.auth.views import PasswordResetCompleteView
 from django.shortcuts import render, redirect
@@ -55,6 +56,12 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 from .models import Category
+from .models import Book
+
+
+def book_list(request):
+    books = Book.objects.all()
+    return render(request, 'base/mysterytbook_list.html', {'books': books})
 
 @login_required
 def bookscategory(request):
@@ -168,6 +175,10 @@ def reset_password(request):
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'base/email/password_reset_confirm.html'
+
+def logout_view(request):
+    logout(request)
+    return redirect('custom_login')
 
 
 def send_password_reset_email(request):

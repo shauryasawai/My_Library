@@ -34,6 +34,8 @@ class CustomUser(AbstractUser, PermissionsMixin):
         verbose_name_plural = 'users'
 
 
+
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
     theme = models.CharField(max_length=100)
@@ -64,6 +66,15 @@ class Feedback(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=100)
+    description = models.TextField()
+    cover_image = models.ImageField(upload_to='book_covers/')
+
+    def __str__(self):
+        return self.title
 
 
     
