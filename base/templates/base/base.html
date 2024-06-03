@@ -20,13 +20,20 @@
           background-color: rgba(255, 255, 255, 0.1); /* Light background with transparency */
           backdrop-filter: blur(5px); /* Adjust the blur radius as needed */
           -webkit-backdrop-filter: blur(10px); /* For Safari */
-      }
+        }
+        nav-item dropdown{
+          margin-left: 20px;
+        }
+        nav-link dropdown-toggle{
+          left: 200px;
+
+        }
       </style>
 
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light navbar-blur shadow static-top sticky-top">
-        <div class="container">
+        
           <!-- Logo -->
           <a class="navbar-brand mx-auto" href="/">
             <img src="{% static 'img/logo_trans.png' %}" alt="Logo" width="auto" height="60" class="d-inline-block align-text-top">
@@ -38,7 +45,7 @@
           <!-- Navbar items -->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-              <!-- Dashboard -->
+              <!-- Blog -->
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/blog/blog_list"><i class="bi bi-chevron-up"></i> View Blog</a>
               </li>
@@ -71,9 +78,15 @@
               </li>
             </ul>
             <!-- User dropdown -->
-            <div class="nav-item">
-              <a class="nav-link" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="{% static 'img/user.png' %}" alt="user" width="30" height="30" class="d-inline-block align-text-middle   mx-2  "> {{ user.get_username }}
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{% static 'img/user.png' %}" alt="user" width="30" height="30" class="d-inline-block align-text-middle   mx-2  "> {{ user.get_username }}
+            </a>
+              
+              <div class="dropdown-menu" aria-labelledby="userDropdown">
+                
+                <hr>
+                <a class="dropdown-item" href="{% url 'logout' %}">Logout <i class="bi bi-box-arrow-right mt-1"></i></a>
             </div>
           </div>
         </div>

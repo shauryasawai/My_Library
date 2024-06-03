@@ -10,6 +10,7 @@ from .views import custom_login
 from .views import CustomPasswordResetCompleteView
 from .views import get_book_reviews
 from .views import bookscategory
+from .views import logout_view
 
 
 
@@ -28,6 +29,6 @@ urlpatterns=[
   path('feedback_thanks/', views.feedback_thanks, name='feedback_thanks'),
   path('get_book_reviews/', get_book_reviews, name='get_book_reviews'),
   path('books-category/', bookscategory, name='bookscategory'),
-
+  path('logout/', logout_view, name='logout'),
 ]
  
