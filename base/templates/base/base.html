@@ -53,6 +53,9 @@
           margin-right: 15px;
           margin-left: auto;
         }
+        .dropdown{
+          width: 180px;
+        }
       </style>
 
 </head>
@@ -68,7 +71,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <!-- Navbar items -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
               <!-- Blog -->
               <li class="nav-item">
@@ -108,12 +111,12 @@
             <div class="nav-item dropdown">
               <a class="nav-link dropdown-toggle " href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="{% static 'img/user.png' %}" alt="user" width="30" height="30" class="d-inline-block align-text-middle   mx-2  "> {{ user.get_username }}
-            </a>
+              </a>
               
               <div class="dropdown-menu" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="{% url 'logout' %}">Logout <i class="bi bi-box-arrow-right mt-1"></i></a>
+              </div>
             </div>
-          </div>
         </div>
       </nav>
       
