@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "base",
     "blog",
+    "captcha",
 ]
 RECAPTCHA_SITE_KEY = '6Lfn79wpAAAAAJY27d-U3s9HX2PAhJ0cPWxkiIyB'
 RECAPTCHA_SECRET_KEY = '6Lfn79wpAAAAAPG2yFoLemcisYyibkFPxqFgM6J8'

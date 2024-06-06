@@ -8,8 +8,8 @@ from django.forms import ModelForm
 from django import forms
 from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.models import User
-
 class SignUpForm(UserCreationForm):
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].help_text = None
@@ -25,6 +25,7 @@ class SignUpForm(UserCreationForm):
     email = forms.EmailField( label='Email', required=True)
     
     address = forms.CharField()
+
 
     class Meta:
         model = User
