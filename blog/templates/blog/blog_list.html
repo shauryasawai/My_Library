@@ -4,87 +4,134 @@
     <title>Blog List</title>
 </head>
 <style>
-  
-  h1 {
-    font-size: 70px;
+body {
+    background: linear-gradient(#000000, #292929, #1e1e1e, #000000);
+    color: #ffffff; /* Light-colored text */
+    font-family: Arial, sans-serif; /* Optional: Use a different font */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+}
+
+h1, h2 {
     text-align: center;
-    
-}
-h2{
-  padding-left: 80px;
-  padding-top: 30px;
-  font-size: 60px;
-
-
+    margin-bottom: 20px;
 }
 
-/* Style for paragraphs */
-p {
-    line-height: 5.6;
-    margin-bottom: 15px;
+form, .back-to-home, .create-blog {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Glassy effect */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-/* Style for anchor links */
-a {
-    color: #007bff; /* Blue color for links */
-    text-decoration: none;
-    margin-right: 10px;
+label {
+    display: block;
+    margin-bottom: 10px;
 }
 
-a:hover {
-    text-decoration: underline; /* Underline links on hover */
-}
-
-/* Style for buttons */
-button {
-    background-color: #007bff; /* Blue color for buttons */
-    color: white;
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
     border: none;
-    padding: 8px 16px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: #ffffff;
     cursor: pointer;
-    border-radius: 4px;
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker shade of blue on hover */
+    background: #0056b3;
 }
 
-/* Style for forms */
-form {
-    margin-bottom: 20px;
-}
-
-a{
-  font-size: 35px;
-  font-weight: bold;
-  padding-left: 80px;
-}
-a1{
-  font-size: 50px;
-}
-back-to-home {
-  position: absolute;
-  top: 20px;
-  left: 40px;
-}
-
-/* Style for image */
-img {
+a {
+    color: #007BFF;
+    text-decoration: none;
     display: block;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    text-align: center;
+    margin: 5px 0;
+    line-height: 20px;
 }
+
+a:hover {
+    color: #0056b3;
+}
+
+.back-to-home a,
+.create-blog a {
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1); /* Glassy effect */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.back-to-home a:hover,
+.create-blog a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.blog-title a {
+    display: block;
+    padding: 10px;
+    background: rgba(0, 123, 255, 0.1); /* Slightly blue background */
+    border-radius: 10px; /* Rounded corners */
+    color: #007BFF;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.blog-title a:hover {
+    background: #007BFF;
+    color: #ffffff;
+}
+
+
 </style>
 <div class="back-to-home">
   <a href="/home">Back to Home</a>
+  <br>
+  <br>
+  <br>
+  <br>
   
 <body>
     <h1>Blogs List</h1>
     <a href="{% url 'blog_create' %}">Create a New Blog</a>
+    <br>
+    <br>
+    <br>
   
     <h2>Available Blogs</h2>
       {% for blog in blogs %}  
-        <br>
                 <a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a>
                     {% csrf_token %}
                 </form>
