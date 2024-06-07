@@ -1,0 +1,183 @@
+{% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+  rel="stylesheet"
+/>
+<style>
+    body {
+        font-family: DM Sans, Arial, sans-serif;
+        background: linear-gradient(#000000, #292929, #1e1e1e, #000000);
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 100%;
+        overflow: hidden;
+    }
+        
+    .container {
+        box-sizing: border-box;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    h2 {
+        text-align: center;
+        color: #e3e1e1;
+    }
+    
+    .book-catalogue {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        box-sizing: border-box;
+        
+    
+    .book {
+        box-sizing: border-box;
+        width: 250px;
+        height: 400px;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #4f4f4f6b;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        transition: box-shadow 0.3s ease;
+        position: relative;
+    }
+    
+    .book img {
+        width: 100%;
+        height: 300px;
+        vertical-align: middle;
+        border-radius: 5px;
+        object-fit: contain;
+    }
+    
+    .book h3 {
+        position: absolute;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 80px;
+        align-content: center;
+        text-align: center;
+        font-size: 18px;
+        color: #e3e1e1;
+    }
+    
+    .book p {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: calc(100%);
+        height: 0%;
+        overflow-y: scroll;
+        padding: 5px 20px;
+        background-color:#d7d7d7;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: -1;
+
+        margin-top: 0;
+        margin-bottom: 1rem;
+
+
+        opacity: 0;
+        transition: 0.3s ease-out;
+    }
+    
+    .book:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .book:hover p {
+        display: block;
+        z-index: 1;
+
+
+        transition: 0.3s ease-out;
+        height: 50%;
+        top: 50%;
+        /* top: calc(50%-10px); */
+        opacity: 1;
+    }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Adventure Books</h2>
+    <div class="book-catalogue">
+        <div class="book">
+            <img src="https://www.jkrowling.com/wp-content/uploads/2016/11/HPTSS-1.png" alt="Harry Potter and the Sorcerer's Stone">
+            <h3>Harry Potter and the Sorcerer's Stone</h3>
+            <p>Harry discovers he's a wizard on his 11th birthday when Hagrid escorts him to magic-teaching Hogwarts School. As a baby, his mother's love protected him and vanquished the dark lord, leaving Harry with a lightning-bolt scar.</p>
+        </div>
+        <div class="book">
+            <img src="https://static.wikia.nocookie.net/harrypotter/images/b/b2/French_T2_%282016_new_edition%29.jpg/revision/latest/scale-to-width-down/250?cb=20201227171321" alt="Harry Potter and the Chamber of Secrets">
+            <h3>Harry Potter and the Chamber of Secrets</h3>
+            <p>Harry returns to Hogwarts for his second year, which proves to be more challenging than the first. The Chamber of Secrets has been opened, leaving students petrified by an unleashed monster.</p>
+        </div>
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/51foVEpVklL._SL500_.jpg" alt="Harry Potter and the Prisoner of Azkaban">
+            <h3>Harry Potter and the Prisoner of Azkaban</h3>
+            <p>In his third year at Hogwarts, Harry learns that the notorious prisoner Sirius Black has escaped from Azkaban prison and is coming for him. The truth about Sirius, and Harry's own past, is revealed.</p>
+        </div>
+        <div class="book">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTBxrfBrShmgZTP_Fn6819CsFnrH1bKL-w3qqw0heNd0wqBatuXphoiFWsLSAfEj-MXbU9ziUMOiEd2DKWNMuBJMtCrVho0AkYJ3rzRgB0&usqp=CAc" alt="Harry Potter and the Goblet of Fire">
+            <h3>Harry Potter and the Goblet of Fire</h3>
+            <p>During Harry's fourth year at Hogwarts, he is unwillingly entered into the Triwizard Tournament. Facing daunting tasks and dark forces, Harry must navigate the most dangerous year yet.</p>
+        </div>
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/51iQwWIl+XL.jpg" alt="Harry Potter and the Order of the Phoenix">
+            <h3>Harry Potter and the Order of the Phoenix</h3>
+            <p>Harry's fifth year brings new challenges, including the rise of the dark forces led by Voldemort and the new authoritarian regime at Hogwarts. Harry forms 'Dumbledore's Army' to fight back.</p>
+        </div>
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/81DN1723hUL._AC_UF1000,1000_QL80_.jpg" alt="Harry Potter and the Half-Blood Prince">
+            <h3>Harry Potter and the Half-Blood Prince</h3>
+            <p>In his sixth year, Harry discovers a mysterious potions book belonging to the 'Half-Blood Prince.' As he delves deeper into Voldemort's past, Harry prepares for the ultimate battle.</p>
+        </div>
+        <div class="book">
+            <img src="https://m.media-amazon.com/images/I/81aCMT1zKtL._AC_UF1000,1000_QL80_.jpg" alt="Harry Potter and the Deathly Hallows">
+            <h3>Harry Potter and the Deathly Hallows Part-1</h3>
+            <p>In the final book, Harry, Ron, and Hermione leave Hogwarts to find and destroy Voldemort's Horcruxes. The wizarding world is at war, and Harry's journey ends with a showdown against Voldemort.</p>
+        </div>
+        <div class="book">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHZuUlQU9cUuKiDmecaWuQoBx6ssQGS9LrA&s" alt="Harry Potter and the Deathly Hallows">
+            <h3>Harry Potter and the Deathly Hallows Part-2</h3>
+            <p>In the thrilling conclusion to J.K. Rowling's beloved Harry Potter series. The story picks up immediately after the events of Part 1, following Harry, Ron, and Hermione as they continue their quest to destroy the remaining Horcruxes and defeat Lord Voldemort. </p>
+        </div>
+        <div class="book">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHZuUlQU9cUuKiDmecaWuQoBx6ssQGS9LrA&s" alt="Harry Potter and the Deathly Hallows">
+            <h3>Harry Potter and the Deathly Hallows Part-2</h3>
+            <p>In the thrilling conclusion to J.K. Rowling's beloved Harry Potter series. The story picks up immediately after the events of Part 1, following Harry, Ron, and Hermione as they continue their quest to destroy the remaining Horcruxes and defeat Lord Voldemort. </p>
+        </div>
+        <div class="book">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHZuUlQU9cUuKiDmecaWuQoBx6ssQGS9LrA&s" alt="Harry Potter and the Deathly Hallows">
+            <h3>Harry Potter and the Deathly Hallows Part-2</h3>
+            <p>In the thrilling conclusion to J.K. Rowling's beloved Harry Potter series. The story picks up immediately after the events of Part 1, following Harry, Ron, and Hermione as they continue their quest to destroy the remaining Horcruxes and defeat Lord Voldemort. </p>
+        </div>
+        <div class="book">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHZuUlQU9cUuKiDmecaWuQoBx6ssQGS9LrA&s" alt="Harry Potter and the Deathly Hallows">
+            <h3>Harry Potter and the Deathly Hallows Part-2</h3>
+            <p>In the thrilling conclusion to J.K. Rowling's beloved Harry Potter series. The story picks up immediately after the events of Part 1, following Harry, Ron, and Hermione as they continue their quest to destroy the remaining Horcruxes and defeat Lord Voldemort. </p>
+        </div>
+        <div class="book">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHZuUlQU9cUuKiDmecaWuQoBx6ssQGS9LrA&s" alt="Harry Potter and the Deathly Hallows">
+            <h3>Harry Potter and the Deathly Hallows Part-2</h3>
+            <p>In the thrilling conclusion to J.K. Rowling's beloved Harry Potter series. The story picks up immediately after the events of Part 1, following Harry, Ron, and Hermione as they continue their quest to destroy the remaining Horcruxes and defeat Lord Voldemort. </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %} 

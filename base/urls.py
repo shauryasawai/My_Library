@@ -9,7 +9,7 @@ from django.urls import path
 from .views import custom_login
 from .views import CustomPasswordResetCompleteView
 from .views import get_book_reviews
-from .views import bookscategory,book_list
+from .views import bookscategory,book_list, book_list2, book_list3, book_list4
 from .views import logout_view
 
 
@@ -31,6 +31,9 @@ urlpatterns=[
   path('books-category/', bookscategory, name='bookscategory'),
   path('logout/', logout_view, name='logout'),
   path('book_list/', book_list, name='book_list'),
+  path('book_list2/', book_list2, name='book_list2'),
+  path('book_list3/', book_list3, name='book_list3'),
+  path('book_list4/', book_list4, name='book_list4'),
 
 ]
  

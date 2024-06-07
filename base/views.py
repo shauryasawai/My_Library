@@ -54,8 +54,7 @@ from django.http import JsonResponse
 from .models import BookReview
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-
-
+from .models import Book
 from .models import Category
 from .models import Book
 
@@ -63,6 +62,18 @@ from .models import Book
 def book_list(request):
     books = Book.objects.all()
     return render(request, 'base/mysterytbook_list.html', {'books': books})
+
+def book_list2(request):
+    books = Book.objects.all()
+    return render(request, 'base/adventurebook_list.html', {'books': books})
+
+def book_list3(request):
+    books = Book.objects.all()
+    return render(request, 'base/superherobook_list.html', {'books': books})
+
+def book_list4(request):
+    books = Book.objects.all()
+    return render(request, 'base/dramabook_list.html', {'books': books})
 
 @login_required
 def bookscategory(request):
