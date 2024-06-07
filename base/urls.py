@@ -11,7 +11,7 @@ from .views import CustomPasswordResetCompleteView
 from .views import get_book_reviews
 from .views import bookscategory,book_list, book_list2, book_list3, book_list4
 from .views import logout_view
-
+from . import views
 
 
 urlpatterns=[
@@ -34,6 +34,7 @@ urlpatterns=[
   path('book_list2/', book_list2, name='book_list2'),
   path('book_list3/', book_list3, name='book_list3'),
   path('book_list4/', book_list4, name='book_list4'),
-
+  path('select_books/', views.select_books, name='select_books'),
+  path('selected_books/', views.selected_books, name='selected_books'),
 ]
  
