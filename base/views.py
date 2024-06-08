@@ -262,7 +262,8 @@ def custom_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        return redirect('home')
+        user = authenticate(request, username=username, password=password)
+        return redirect('home/')
     else:
         return render(request, 'base/custom_login.html')
 
