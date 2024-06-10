@@ -55,22 +55,29 @@ from .models import BookReview
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Category
-from .models import Book, UserSelection
+from .models import Book ,Cart
 from django.http import HttpResponseBadRequest
+from .forms import AddToCartForm
 
-def select_books(request):
+
+@login_required
+def add_to_cart(request):
     if request.method == 'POST':
-        selected_books_ids = request.POST.getlist('book_ids')
-        for book_id in selected_books_ids:
-            book = Book.objects.get(id=book_id)
-            UserSelection.objects.create(user=request.user, book=book)
-        return redirect('selected_books')
-    else:
-        return redirect('home')
+        form = AddToCartForm(request.POST)
+        if form.is_valid():
+            slug = form.cleaned_data['slug']
+            book = get_object_or_404(Book, slug=slug)
+            cart, created = Cart.objects.get_or_create(user=request.user)
+            cart.books.add(book)
+            return redirect('cart')
+    return redirect('home')
 
-def selected_books(request):
-    user_selections = UserSelection.objects.filter(user=request.user)
-    return render(request, 'selected_books.html', {'user_selections': user_selections})
+@login_required
+def view_cart(request):
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    return render(request, 'base/cart.html', {'cart': cart})
+
+
 
 def book_list(request):
     books = Book.objects.all()

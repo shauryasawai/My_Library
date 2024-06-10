@@ -13,7 +13,6 @@ from .views import bookscategory,book_list, book_list2, book_list3, book_list4
 from .views import logout_view,about_us
 from . import views
 
-
 urlpatterns=[
   path('home/', views.home, name='home'),
   path('signup/custom_login/home/', views.home , name='Library'),
@@ -35,7 +34,7 @@ urlpatterns=[
   path('book_list3/', book_list3, name='book_list3'),
   path('book_list4/', book_list4, name='book_list4'),
   path('about_us/', about_us, name='about_us'),
-  path('select_books/', views.select_books, name='select_books'),
-  path('selected_books/', views.selected_books, name='selected_books'),
-]
+  path('add-to-cart/', views.add_to_cart, name='add_to_cart'),
+  path('cart/', views.view_cart, name='cart'),
+       ]
  

@@ -8,6 +8,7 @@ from django.forms import ModelForm
 from django import forms
 from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.models import User
+from .models import Book
 
 
 
@@ -64,6 +65,11 @@ class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
         fields = ['name', 'email', 'message']
+    
+
+class AddToCartForm(forms.Form):
+    slug = forms.SlugField(widget=forms.HiddenInput())
+
 
 
 
