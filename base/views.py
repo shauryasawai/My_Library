@@ -203,7 +203,7 @@ class CustomPasswordResetCompleteView(PasswordResetCompleteView):
 
 def logout_view(request):
     logout(request)
-    return redirect('custom_login')
+    return redirect('login')
 
 
 def send_password_reset_email(request):
@@ -267,5 +267,7 @@ def custom_login(request):
     else:
         return render(request, 'base/custom_login.html')
 
+def about_us(request):
+    return render(request, 'base/about_us.html')
 
 
