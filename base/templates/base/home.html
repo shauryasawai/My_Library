@@ -136,10 +136,6 @@
     <h2>Harry Potter Books</h2>
     <div class="book-catalogue">
         <div class="book">
-            <form method="post" action="{% url 'add_to_cart' %}">
-                {% csrf_token %}
-                <input type="hidden" name="slug" value="{{ book.slug }}">
-                <button type="submit">Add to Read Later</button>
             </form>
             <img src="https://www.jkrowling.com/wp-content/uploads/2016/11/HPTSS-1.png" alt="Harry Potter and the Sorcerer's Stone">
             <h3>Harry Potter and the Sorcerer's Stone</h3>
@@ -185,3 +181,8 @@
 </div>
 
 {% endblock %} 
+
+<!-- <form method="post" action="{% url 'add_to_cart' %}">
+                {% csrf_token %}
+                <input type="hidden" name="slug" value="{{ book.slug }}">
+                <button type="submit">Add to Read Later</button>
