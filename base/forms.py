@@ -67,8 +67,7 @@ class FeedbackForm(forms.ModelForm):
         fields = ['name', 'email', 'message']
     
 
-class AddToCartForm(forms.Form):
-    slug = forms.SlugField(widget=forms.HiddenInput())
+
 
 
 

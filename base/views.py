@@ -55,27 +55,9 @@ from .models import BookReview
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Category
-from .models import Book ,Cart
+from .models import Book 
 from django.http import HttpResponseBadRequest
-from .forms import AddToCartForm
 
-
-@login_required
-def add_to_cart(request):
-    if request.method == 'POST':
-        form = AddToCartForm(request.POST)
-        if form.is_valid():
-            slug = form.cleaned_data['slug']
-            book = get_object_or_404(Book, slug=slug)
-            cart, created = Cart.objects.get_or_create(user=request.user)
-            cart.books.add(book)
-            return redirect('cart')
-    return redirect('home')
-
-@login_required
-def view_cart(request):
-    cart, created = Cart.objects.get_or_create(user=request.user)
-    return render(request, 'base/cart.html', {'cart': cart})
 
 
 

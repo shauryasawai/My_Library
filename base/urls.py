@@ -34,7 +34,5 @@ urlpatterns=[
   path('book_list3/', book_list3, name='book_list3'),
   path('book_list4/', book_list4, name='book_list4'),
   path('about_us/', about_us, name='about_us'),
-  path('add-to-cart/', views.add_to_cart, name='add_to_cart'),
-  path('cart/', views.view_cart, name='cart'),
        ]
  
