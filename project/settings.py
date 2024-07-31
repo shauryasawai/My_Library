@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-29goq%az&050pdx4%(wo(mg%1@8e!%1v&j$2b6&rle0hhk!cny
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app"]
+ALLOWED_HOSTS = [".vercel.app","127.0.0.1"]
 
 
 # Application definition
@@ -78,13 +78,22 @@ WSGI_APPLICATION = "project.wsgi.application"
 LOGOUT_REDIRECT_URL = '/logout'
 
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "library",
+        "USER": "postgres",
+        "PASSWORD": "password",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
