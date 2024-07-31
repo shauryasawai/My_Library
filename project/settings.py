@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-29goq%az&050pdx4%(wo(mg%1@8e!%1v&j$2b6&rle0hhk!cny
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app"]
 
 
 # Application definition
@@ -127,6 +127,7 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'books', 'static'),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -153,3 +154,4 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 # Ensure sessions are saved correctly
 SESSION_SAVE_EVERY_REQUEST = True
 SESSION_COOKIE_AGE = 172800
+
