@@ -95,20 +95,32 @@ LOGOUT_REDIRECT_URL = '/logout'
 #     }
 # }
 # import os
+
+import os
 import dj_database_url
 
+# Retrieve the DATABASE_URL from environment variables
+DATABASE_URL = os.getenv('postgresql://postgres.bknbfjijeehppjuouosu:shaurya123...@aws-0-ap-south-1.pooler.supabase.com:6543/postgres')
+
+# Ensure the DATABASE_URL exists
+if not DATABASE_URL:
+    raise ImproperlyConfigured("The DATABASE_URL environment variable is not set.")
+
+# Configure the default database using dj_database_url
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('postgresql://postgres.bknbfjijeehppjuouosu:shaurya123...@aws-0-ap-south-1.pooler.supabase.com:6543/postgres')
+        default=DATABASE_URL,
+        conn_max_age=600,
+        ssl_require=True
     )
 }
 
-# Ensure the ENGINE is correctly set for PostgreSQL
+# Ensure the ENGINE is set to PostgreSQL
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
 
-# Handle the NAME key if it's missing
-if not DATABASES['default'].get('NAME'):
-    DATABASES['default']['NAME'] = os.path.basename(os.getenv('postgresql://postgres.bknbfjijeehppjuouosu:shaurya123...@aws-0-ap-south-1.pooler.supabase.com:6543/postgres').split('/')[-1])
+# Ensure the NAME field is set correctly
+if 'NAME' not in DATABASES['default']:
+    DATABASES['default']['NAME'] = os.path.basename(DATABASE_URL.split('/')[-1])
 
 
 AUTH_PASSWORD_VALIDATORS = [
