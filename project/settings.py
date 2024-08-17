@@ -98,13 +98,14 @@ LOGOUT_REDIRECT_URL = '/logout'
 
 import os
 import dj_database_url
+from django.core.exceptions import ImproperlyConfigured
 
 # Retrieve the DATABASE_URL from environment variables
 DATABASE_URL = os.getenv('postgresql://postgres.bknbfjijeehppjuouosu:shaurya123...@aws-0-ap-south-1.pooler.supabase.com:6543/postgres')
 
 # Ensure the DATABASE_URL exists
 if not DATABASE_URL:
-    raise ImproperlyConfigured("The DATABASE_URL environment variable is not set.")
+    raise ImproperlyConfigured("The DATABASE_URL environment variable is not set.") 
 
 # Configure the default database using dj_database_url
 DATABASES = {
