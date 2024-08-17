@@ -99,6 +99,10 @@ LOGOUT_REDIRECT_URL = '/logout'
 import os
 import dj_database_url
 from django.core.exceptions import ImproperlyConfigured
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Retrieve the DATABASE_URL from environment variables
 DATABASE_URL = os.getenv('DATABASE_URL')
