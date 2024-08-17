@@ -84,16 +84,25 @@ LOGOUT_REDIRECT_URL = '/logout'
 #         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "library",
+#         "USER": "postgres",
+#         "PASSWORD": "password",
+#         "HOST": "localhost",
+#         "PORT": "5432",
+#     }
+# }
+# import os
+import dj_database_url
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "library",
-        "USER": "postgres",
-        "PASSWORD": "password",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
+    'default': dj_database_url.config(
+        default=os.getenv('postgresql://postgres.bknbfjijeehppjuouosu:[YOUR-PASSWORD]@aws-0-ap-south-1.pooler.supabase.com:6543/postgres')
+    )
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
