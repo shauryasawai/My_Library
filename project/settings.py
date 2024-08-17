@@ -99,13 +99,16 @@ import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('postgresql://postgres.bknbfjijeehppjuouosu:[YOUR-PASSWORD]@aws-0-ap-south-1.pooler.supabase.com:6543/postgres')
+        default=os.getenv('postgresql://postgres.bknbfjijeehppjuouosu:shaurya123...@aws-0-ap-south-1.pooler.supabase.com:6543/postgres')
     )
 }
 
-# Ensure the correct ENGINE is set
-if 'ENGINE' not in DATABASES['default']:
-    DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
+# Ensure the ENGINE is correctly set for PostgreSQL
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
+
+# Handle the NAME key if it's missing
+if not DATABASES['default'].get('NAME'):
+    DATABASES['default']['NAME'] = os.path.basename(os.getenv('postgresql://postgres.bknbfjijeehppjuouosu:shaurya123...@aws-0-ap-south-1.pooler.supabase.com:6543/postgres').split('/')[-1])
 
 
 AUTH_PASSWORD_VALIDATORS = [
