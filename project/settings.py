@@ -101,7 +101,7 @@ import dj_database_url
 from django.core.exceptions import ImproperlyConfigured
 
 # Retrieve the DATABASE_URL from environment variables
-DATABASE_URL = os.getenv('postgresql://postgres.bknbfjijeehppjuouosu:shaurya123...@aws-0-ap-south-1.pooler.supabase.com:6543/postgres')
+DATABASE_URL = os.getenv('DATABASE_URL')
 
 # Ensure the DATABASE_URL exists
 if not DATABASE_URL:
