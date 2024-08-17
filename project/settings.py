@@ -103,6 +103,10 @@ DATABASES = {
     )
 }
 
+# Ensure the correct ENGINE is set
+if 'ENGINE' not in DATABASES['default']:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
