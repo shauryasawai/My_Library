@@ -53,7 +53,6 @@ class BookReview(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
     review = models.TextField()
-    image_url = models.URLField()
     rating = models.PositiveIntegerField(default=1)
     def __str__(self):
         return self.title
